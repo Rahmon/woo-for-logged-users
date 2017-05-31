@@ -3,10 +3,7 @@
 /**
  * The file that defines the core plugin class
  *
- * A class definition that includes attributes and functions used across both the
- * public-facing side of the site and the admin area.
- *
- * @link       https://github.com/Rahmon/
+ * @link       https://github.com/Rahmon/woo-for-logged-users
  * @since      1.0.0
  *
  * @package    Woo_For_Logged_Users
@@ -25,7 +22,7 @@
  * @since      1.0.0
  * @package    Woo_For_Logged_Users
  * @subpackage Woo_For_Logged_Users/includes
- * @author     Rahmon <ra@gmail.com>
+ * @author     Rahmohn
  */
 class Woo_For_Logged_Users {
 
@@ -83,7 +80,6 @@ class Woo_For_Logged_Users {
 	 *
 	 * - Woo_For_Logged_Users_Loader. Orchestrates the hooks of the plugin.
 	 * - Woo_For_Logged_Users_i18n. Defines internationalization functionality.
-	 * - Woo_For_Logged_Users_Admin. Defines all hooks for the admin area.
 	 * - Woo_For_Logged_Users_Public. Defines all hooks for the public side of the site.
 	 *
 	 * Create an instance of the loader which will be used to register the hooks

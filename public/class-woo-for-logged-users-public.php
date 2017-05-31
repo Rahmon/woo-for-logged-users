@@ -3,7 +3,7 @@
 /**
  * The public-facing functionality of the plugin.
  *
- * @link       https://github.com/Rahmon/
+ * @link       https://github.com/Rahmon/woo-for-logged-users
  * @since      1.0.0
  *
  * @package    Woo_For_Logged_Users
@@ -13,12 +13,11 @@
 /**
  * The public-facing functionality of the plugin.
  *
- * Defines the plugin name, version, and two examples hooks for how to
- * enqueue the admin-specific stylesheet and JavaScript.
+ * Defines the plugin name, version.
  *
  * @package    Woo_For_Logged_Users
  * @subpackage Woo_For_Logged_Users/public
- * @author     Rahmon <ra@gmail.com>
+ * @author     Rahmohn
  */
 class Woo_For_Logged_Users_Public {
 
@@ -60,9 +59,11 @@ class Woo_For_Logged_Users_Public {
 	 * @since 1.0.0
 	 */
 	public function redirect_not_logged_users() {
+
 		if ( ! is_user_logged_in() && ( is_woocommerce() || is_cart() || is_checkout() ) ) {
 			wp_safe_redirect( site_url( 'my-account/' ) );
 			exit;
 		}
+
 	}
 }

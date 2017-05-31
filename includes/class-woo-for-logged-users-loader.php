@@ -3,7 +3,7 @@
 /**
  * Register all actions and filters for the plugin
  *
- * @link       https://github.com/Rahmon/
+ * @link       https://github.com/Rahmon/woo-for-logged-users
  * @since      1.0.0
  *
  * @package    Woo_For_Logged_Users
@@ -19,7 +19,7 @@
  *
  * @package    Woo_For_Logged_Users
  * @subpackage Woo_For_Logged_Users/includes
- * @author     Rahmon <ra@gmail.com>
+ * @author     Rahmohn
  */
 class Woo_For_Logged_Users_Loader {
 
@@ -102,7 +102,7 @@ class Woo_For_Logged_Users_Loader {
 			'component'     => $component,
 			'callback'      => $callback,
 			'priority'      => $priority,
-			'accepted_args' => $accepted_args
+			'accepted_args' => $accepted_args,
 		);
 
 		return $hooks;
