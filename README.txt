@@ -12,8 +12,7 @@ Set the WooCommerce Shop only for logged users. Just active the plugin.
 
 == Description ==
 
-Set the WooCommerce Shop only for logged users. Just active the plugin and users not logged will be redirect to
-"My Account" page to login or register before.
+Set the WooCommerce Shop only for logged users. Just activate the plugin and users not logged will be redirect to "My Account" page to login or register before.
 
 == Installation ==
 
@@ -22,10 +21,9 @@ Set the WooCommerce Shop only for logged users. Just active the plugin and users
 
 == Frequently Asked Questions ==
 
-= What I need to do after active the plugin? =
+= What I need to do after activate the plugin? =
 
-Nothing :). After active the plugin automatically not logged users will be redirect to "My Account" page to login
-or register.
+Nothing :). After active the plugin automatically will redirect not logged users to "My Account" page to login or register.
 
 == Changelog ==
 
