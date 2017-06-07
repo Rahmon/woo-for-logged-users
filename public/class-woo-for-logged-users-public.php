@@ -59,13 +59,12 @@ class Woo_For_Logged_Users_Public {
 	 * @since 1.0.0
 	 */
 	public function redirect_not_logged_users() {
-		if ( in_array( 'woocommerce/woocommerce.php', apply_filters('active_plugins', get_option( 'active_plugins' ) ) ) ) {
+		if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
 
-				if ( ! is_user_logged_in() && ( is_woocommerce() || is_cart() || is_checkout() ) ) {
-					wp_safe_redirect( site_url( 'my-account/' ) );
-					exit;
-				}
-
+			if ( ! is_user_logged_in() && ( is_woocommerce() || is_cart() || is_checkout() ) ) {
+				wp_safe_redirect( wc_get_page_permalink( 'myaccount' ) );
+				exit;
+			}
 		}
 	}
 }
