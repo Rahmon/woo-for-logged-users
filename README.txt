@@ -4,7 +4,7 @@ Donate link: https://github.com/Rahmon/
 Tags: woocommerce, logged user, shop, only logged user
 Requires at least: 3.0.1
 Tested up to: 4.9
-Stable tag: 1.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -26,6 +26,9 @@ Set the WooCommerce Shop only for logged users. Just activate the plugin and use
 Nothing :). After active the plugin automatically will redirect not logged users to "My Account" page to login or register.
 
 == Changelog ==
+
+= 1.0.1 =
+* Updated "tested up to"
 
 = 1.0 =
 * Initial release
