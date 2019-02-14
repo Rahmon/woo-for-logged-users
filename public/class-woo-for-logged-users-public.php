@@ -67,4 +67,19 @@ class Woo_For_Logged_Users_Public {
 			}
 		}
 	}
+
+	/**
+	 * Redirect after login
+	 * 
+	 * @since 1.1.0
+	 */
+	public function redirect_after_login( $redirect_to ) {
+		if (false) {
+			$shop_page = wc_get_page_permalink( 'shop' );
+			$redirect_to = $shop_page;
+		}
+
+		return $redirect_to;
+	}
+	
 }

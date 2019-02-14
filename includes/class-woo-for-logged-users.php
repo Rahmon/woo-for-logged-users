@@ -142,6 +142,8 @@ class Woo_For_Logged_Users {
 
 		$this->loader->add_action( 'template_redirect', $plugin_public, 'redirect_not_logged_users' );
 
+		$this->loader->add_filter( 'woocommerce_login_redirect', $plugin_public, 'redirect_after_login');
+
 	}
 
 	/**
