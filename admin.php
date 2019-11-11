@@ -4,7 +4,7 @@
  * Add submenu in WooCommerce -> WooCommerce for logged users
  */
 function wflu_add_admin_menu() {
-	add_submenu_page( 'woocommerce', 'WooCommerce for logged users', 'WooCommerce for logged users', 'manage_options', 'woocommerce_for_logged_users', 'wflu_options_page' );
+	add_submenu_page( 'woocommerce', 'WooCommerce for logged-in users', 'WooCommerce for logged-in users', 'manage_options', 'woocommerce_for_logged_users', 'wflu_options_page' );
 }
 add_action( 'admin_menu', 'wflu_add_admin_menu' );
 
@@ -54,7 +54,7 @@ function wflu_options_page() {
 	?>
 	<form action='options.php' method='post'>
 
-		<h2>WooCommerce for logged users</h2>
+		<h2>WooCommerce for logged-in users</h2>
 
 		<?php
 		settings_fields( 'wooForLoggedUsersPage' );

@@ -1,18 +1,18 @@
 === Plugin Name ===
 Contributors: rahmohn
 Donate link: https://github.com/Rahmon/
-Tags: woocommerce, logged user, shop, only logged user
+Tags: woocommerce, logged-in user, shop, only logged-in user, logged in
 Requires at least: 3.0.1
-Tested up to: 5.1
+Tested up to: 5.3
 Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Set the WooCommerce Shop only for logged users. Just activate the plugin.
+Set the WooCommerce Shop only for logged-in users. Just activate the plugin.
 
 == Description ==
 
-Set the WooCommerce Shop only for logged users. Just activate the plugin and users not logged will be redirect to "My Account" page to login or register before.
+Set the WooCommerce Shop only for logged-in users. Just activate the plugin and users not logged-in will be redirect to "My Account" page to login or register before.
 
 == Installation ==
 
@@ -23,11 +23,11 @@ Set the WooCommerce Shop only for logged users. Just activate the plugin and use
 
 = What I need to do after activate the plugin? =
 
-Nothing :). After active the plugin automatically will redirect not logged users to "My Account" page to login or register.
+Nothing :). After active the plugin automatically will redirect not logged-in users to "My Account" page to login or register.
 
 = Can I redirect users to "Shop" page after login or register?
 
-Yes, you can. In Dashboard, go to menu WooCommerce -> WooCommerce for logged users and check the option "Redirect to shop after login".
+Yes, you can. In Dashboard, go to menu WooCommerce -> WooCommerce for logged-in users and check the option "Redirect to shop after login".
 
 == Changelog ==
 
