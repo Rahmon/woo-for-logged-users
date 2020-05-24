@@ -1,8 +1,13 @@
 <?php
+/**
+ * Admin page
+ *
+ * @package WooCommerce_For_Logged_In_Users
+ */
 
 $wflu_settings = 'wflu_settings';
 
-$wflu_redirect_page_option = 'wflu_redirect_page_option';
+$wflu_redirect_page_option             = 'wflu_redirect_page_option';
 $wflu_redirect_page_after_login_option = 'wflu_redirect_page_after_login_option';
 
 /**
@@ -20,7 +25,7 @@ function wflu_enqueue_admin( $hook ) {
 	wp_enqueue_script(
 		$wflu_admin,
 		plugins_url( 'dist/index.js', __FILE__ ),
-		array('wp-i18n'),
+		array( 'wp-i18n' ),
 		'1.0.0',
 		true
 	);
@@ -29,10 +34,10 @@ function wflu_enqueue_admin( $hook ) {
 		$wflu_admin,
 		'wfluSettings',
 		array(
-			'restURL' => rest_url( '/' ),
-			'shopPageId' => wc_get_page_id('shop'),
-			'cartPageId' => wc_get_page_id('cart'),
-			'checkoutPageId' => wc_get_page_id('checkout'),
+			'restURL'        => rest_url( '/' ),
+			'shopPageId'     => wc_get_page_id( 'shop' ),
+			'cartPageId'     => wc_get_page_id( 'cart' ),
+			'checkoutPageId' => wc_get_page_id( 'checkout' ),
 		)
 	);
 
@@ -76,24 +81,6 @@ function wflu_checkbox_redirect_to_shop_after_login_render() {
 }
 
 /**
- * Render "Redirect" input text field
- */
-function wflu_input_redirect_render() {
-	global $wflu_settings;
-
-	$options     = get_option( $wflu_settings );
-	$input_value = 'myaccount';
-
-	if ( ! empty( $options ) ) {
-		$input_value = $options['wflu_input_redirect'];
-	}
-
-	?>
-	<input type='text' name='wflu_settings[wflu_input_redirect]' value='<?php echo $input_value; ?>' />
-	<?php
-}
-
-/**
  * Render form of settings page
  */
 function wflu_options_page() {
@@ -108,12 +95,12 @@ function wflu_options_page() {
 function wflu_get_settings() {
 	global $wflu_settings, $wflu_redirect_page_option, $wflu_redirect_page_after_login_option;
 
-	$my_account_page_id = wc_get_page_id('myaccount');
+	$my_account_page_id = wc_get_page_id( 'myaccount' );
 
-	$my_account_page = [
+	$my_account_page = array(
 		'value' => -1 !== $my_account_page_id ? $my_account_page_id : '',
-		'label' => -1 !== $my_account_page_id ? esc_html(get_the_title($my_account_page_id)) : ''
-	];
+		'label' => -1 !== $my_account_page_id ? esc_html( get_the_title( $my_account_page_id ) ) : '',
+	);
 
 	$default_value = array(
 		$wflu_redirect_page_option             => $my_account_page,
@@ -122,26 +109,26 @@ function wflu_get_settings() {
 
 	$options = get_option( $wflu_settings );
 
-	if ($options) {
-		if (isset($options[$wflu_redirect_page_option]) && isset($options[$wflu_redirect_page_after_login_option])) {
+	if ( $options ) {
+		if ( isset( $options[ $wflu_redirect_page_option ] ) && isset( $options[ $wflu_redirect_page_after_login_option ] ) ) {
 			$options_value = array();
 
-			if (get_the_title($options[$wflu_redirect_page_option])) {
-				$options_value[$wflu_redirect_page_option] = [
-					'value' => $options[$wflu_redirect_page_option],
-					'label' => esc_html(get_the_title($options[$wflu_redirect_page_option]))
-				];
+			if ( get_the_title( $options[ $wflu_redirect_page_option ] ) ) {
+				$options_value[ $wflu_redirect_page_option ] = array(
+					'value' => $options[ $wflu_redirect_page_option ],
+					'label' => esc_html( get_the_title( $options[ $wflu_redirect_page_option ] ) ),
+				);
 			}
 
-			if (get_the_title($options[$wflu_redirect_page_option])) {
-				$options_value[$wflu_redirect_page_after_login_option] = [
-					'value' => $options[$wflu_redirect_page_after_login_option],
-					'label' => esc_html(get_the_title($options[$wflu_redirect_page_after_login_option]))
-				];
+			if ( get_the_title( $options[ $wflu_redirect_page_option ] ) ) {
+				$options_value[ $wflu_redirect_page_after_login_option ] = array(
+					'value' => $options[ $wflu_redirect_page_after_login_option ],
+					'label' => esc_html( get_the_title( $options[ $wflu_redirect_page_after_login_option ] ) ),
+				);
 			}
 
-			if (!empty($options_value)) {
-				return array_merge($default_value, $options_value);
+			if ( ! empty( $options_value ) ) {
+				return array_merge( $default_value, $options_value );
 			}
 		}
 	}
@@ -160,7 +147,7 @@ function wflu_set_settings( $request ) {
 	$option_name    = $wflu_settings;
 	$current_values = get_option( $option_name );
 
-	$redirect_page_value                = sanitize_text_field($request->get_param( $wflu_redirect_page_option ) );
+	$redirect_page_value                = sanitize_text_field( $request->get_param( $wflu_redirect_page_option ) );
 	$redirect_to_shop_after_login_value = sanitize_text_field( $request->get_param( $wflu_redirect_page_after_login_option ) );
 
 	if ( ! empty( $redirect_page_value ) && ! empty( $redirect_to_shop_after_login_value ) ) {
@@ -170,6 +157,7 @@ function wflu_set_settings( $request ) {
 		);
 
 		if ( false !== $current_values ) {
+			// phpcs:ignore
 			if ( $current_values == $new_values ) {
 				$response = true;
 			} else {
@@ -187,7 +175,7 @@ function wflu_set_settings( $request ) {
 		}
 	}
 
-	return new WP_Error( 'cant-update', __('Something went wrong. The settings were not updated.', 'woo-for-logged-in-users') );
+	return new WP_Error( 'cant-update', __( 'Something went wrong. The settings were not updated.', 'woo-for-logged-in-users' ) );
 }
 
 add_action(
