@@ -1,0 +1,14 @@
+{
+	"plugins": [
+		"react-hooks"
+	],
+	"extends": [
+		"plugin:@wordpress/eslint-plugin/recommended",
+		"plugin:react-hooks/recommended"
+	],
+	"rules": {
+		"@wordpress/react-no-unsafe-timeout": "error",
+		"react-hooks/rules-of-hooks": "error",
+    	"react-hooks/exhaustive-deps": "warn"
+	}
+}

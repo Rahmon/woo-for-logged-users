@@ -1,0 +1,37 @@
+{
+  "name": "woo-for-logged-users",
+  "version": "1.1.0",
+  "description": "Settings page",
+  "main": "index.js",
+  "repository": "https://github.com/Rahmon/woo-for-logged-users.git",
+  "author": "Ramon <Rahmon@users.noreply.github.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "parcel watch src/index.js",
+    "dev": "parcel watch src/index.js",
+    "build": "parcel build src/index.js"
+  },
+  "dependencies": {
+    "@chakra-ui/core": "^0.7.0",
+    "@emotion/core": "^10.0.28",
+    "@emotion/styled": "^10.0.27",
+    "axios": "^0.19.2",
+    "emotion-theming": "^10.0.27",
+    "formik": "^2.1.4",
+    "lodash": "^4.17.15",
+    "ramda": "^0.27.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-select": "^3.1.0",
+    "yup": "^0.28.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/preset-react": "^7.9.4",
+    "@wordpress/eslint-plugin": "^5.0.1",
+    "@wordpress/prettier-config": "^0.2.0",
+    "eslint-plugin-react-hooks": "^4.0.2",
+    "parcel-bundler": "^1.12.4"
+  }
+}
