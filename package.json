@@ -33,5 +33,8 @@
     "@wordpress/prettier-config": "^0.2.0",
     "eslint-plugin-react-hooks": "^4.0.2",
     "parcel-bundler": "^1.12.4"
+  },
+  "resolutions": {
+    "node-forge": "0.10.0"
   }
 }
