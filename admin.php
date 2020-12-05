@@ -30,6 +30,8 @@ function wflu_enqueue_admin( $hook ) {
 		true
 	);
 
+	wp_set_script_translations( $wflu_admin, 'woo-for-logged-in-users' );
+
 	wp_localize_script(
 		$wflu_admin,
 		'wfluSettings',
