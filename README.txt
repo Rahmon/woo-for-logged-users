@@ -31,6 +31,9 @@ Yes, you can. In Dashboard, go to menu WooCommerce -> WooCommerce for logged-in 
 
 == Changelog ==
 
+= 1.2.1 =
+* Fix internationalization issue
+
 = 1.2.0 =
 * Update the settings page with redirect options
 
