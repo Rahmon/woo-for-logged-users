@@ -23,7 +23,7 @@ Set the WooCommerce Shop only for logged-in users. Just activate the plugin and 
 
 = What do I need to do after activating the plugin? =
 
-Nothing :). After activating, the plugin automatically will redirect not logged-in users to "My Account" page to login.
+Nothing :).. After activating, the plugin automatically will redirect not logged-in users to "My Account" page to login.
 
 = Can I set what pages the user will be redirected to?
 
