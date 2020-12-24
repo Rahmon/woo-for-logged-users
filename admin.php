@@ -40,6 +40,7 @@ function wflu_enqueue_admin( $hook ) {
 			'shopPageId'     => wc_get_page_id( 'shop' ),
 			'cartPageId'     => wc_get_page_id( 'cart' ),
 			'checkoutPageId' => wc_get_page_id( 'checkout' ),
+			'nonce'          => wp_create_nonce( 'wp_rest' ),
 		)
 	);
 
@@ -180,6 +181,15 @@ function wflu_set_settings( $request ) {
 	return new WP_Error( 'cant-update', __( 'Something went wrong. The settings were not updated.', 'woo-for-logged-in-users' ) );
 }
 
+/**
+ * Check if the user can get or set the settings
+ *
+ * @return bool
+ */
+function wflu_settings_permissions_check() {
+	return current_user_can( 'manage_options' );
+}
+
 add_action(
 	'rest_api_init',
 	function () {
@@ -187,8 +197,9 @@ add_action(
 			'wflu/v1',
 			'/settings',
 			array(
-				'methods'  => WP_REST_Server::READABLE,
-				'callback' => 'wflu_get_settings',
+				'methods'             => WP_REST_Server::READABLE,
+				'callback'            => 'wflu_get_settings',
+				'permission_callback' => 'wflu_settings_permissions_check',
 			)
 		);
 
@@ -196,8 +207,9 @@ add_action(
 			'wflu/v1',
 			'/settings',
 			array(
-				'methods'  => WP_REST_Server::CREATABLE,
-				'callback' => 'wflu_set_settings',
+				'methods'             => WP_REST_Server::CREATABLE,
+				'callback'            => 'wflu_set_settings',
+				'permission_callback' => 'wflu_settings_permissions_check',
 			)
 		);
 	}
