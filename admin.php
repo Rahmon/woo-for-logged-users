@@ -186,8 +186,8 @@ function wflu_set_settings( $request ) {
  *
  * @return bool
  */
-function wflu_settings_permissions_check() {
-	return current_user_can( 'manage_options' );
+function wflu_settings_permission_check() {
+	return current_user_can( apply_filters( 'wflu_capability_permission_check', 'manage_options' ) );
 }
 
 add_action(
@@ -199,7 +199,7 @@ add_action(
 			array(
 				'methods'             => WP_REST_Server::READABLE,
 				'callback'            => 'wflu_get_settings',
-				'permission_callback' => 'wflu_settings_permissions_check',
+				'permission_callback' => 'wflu_settings_permission_check',
 			)
 		);
 
@@ -209,7 +209,7 @@ add_action(
 			array(
 				'methods'             => WP_REST_Server::CREATABLE,
 				'callback'            => 'wflu_set_settings',
-				'permission_callback' => 'wflu_settings_permissions_check',
+				'permission_callback' => 'wflu_settings_permission_check',
 			)
 		);
 	}
