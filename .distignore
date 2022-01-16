@@ -5,6 +5,7 @@
 /.vscode
 /.vendor
 /.cache
+/.parcel-cache
 
 .distignore
 .gitignore
