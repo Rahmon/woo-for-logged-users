@@ -3,8 +3,8 @@ Contributors: rahmohn
 Donate link: https://github.com/Rahmon/
 Tags: woocommerce, logged-in user, shop, only logged-in user, logged in
 Requires at least: 3.0.1
-Tested up to: 5.7
-Stable tag: 1.2.2
+Tested up to: 5.9
+Stable tag: 1.2.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -30,6 +30,9 @@ Nothing :). After activating, the plugin automatically will redirect not logged-
 Yes, you can. In Dashboard, go to menu WooCommerce -> WooCommerce for logged-in users and set the pages that you desire.
 
 == Changelog ==
+
+= 1.2.3 =
+* **Security:** update dependencies.
 
 = 1.2.2 =
 * Fix registering of REST API routes
