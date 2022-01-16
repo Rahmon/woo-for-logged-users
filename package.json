@@ -21,6 +21,7 @@
     "@chakra-ui/core": "^0.8.0",
     "@emotion/core": "^10.1.1",
     "@emotion/styled": "^10.0.31",
+    "@swc/helpers": "^0.3.2",
     "axios": "^0.22.0",
     "emotion-theming": "^10.0.27",
     "formik": "^2.1.7",
@@ -29,6 +30,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-select": "^3.2.0",
+    "regenerator-runtime": "^0.13.9",
     "yup": "^0.28.5"
   },
   "devDependencies": {
@@ -36,11 +38,9 @@
     "@babel/preset-env": "^7.16.8",
     "@babel/preset-react": "^7.16.7",
     "@parcel/transformer-react-refresh-wrap": "^2.2.0",
-    "@swc/helpers": "^0.3.2",
     "@wordpress/eslint-plugin": "^9.3.0",
     "@wordpress/prettier-config": "^1.1.1",
     "eslint-plugin-react-hooks": "^4.3.0",
-    "parcel": "^2.2.0",
-    "regenerator-runtime": "^0.13.9"
+    "parcel": "^2.2.0"
   }
 }
