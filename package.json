@@ -13,9 +13,9 @@
     }
   },
   "scripts": {
-    "start": "parcel watch src/index.js",
-    "dev": "parcel watch src/index.js",
-    "build": "parcel build src/index.js"
+    "start": "mix watch",
+    "dev": "mix",
+    "build": "mix --production"
   },
   "dependencies": {
     "@chakra-ui/core": "^0.8.0",
@@ -34,13 +34,10 @@
     "yup": "^0.28.5"
   },
   "devDependencies": {
-    "@babel/core": "^7.16.7",
-    "@babel/preset-env": "^7.16.8",
     "@babel/preset-react": "^7.16.7",
-    "@parcel/transformer-react-refresh-wrap": "^2.2.0",
     "@wordpress/eslint-plugin": "^9.3.0",
     "@wordpress/prettier-config": "^1.1.1",
     "eslint-plugin-react-hooks": "^4.3.0",
-    "parcel": "^2.2.0"
+    "laravel-mix": "^6.0.43"
   }
 }
