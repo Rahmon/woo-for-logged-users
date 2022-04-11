@@ -1,7 +1,5 @@
-import React from 'react';
+import { __ as __i18n } from '@wordpress/i18n';
 import { Box } from '@chakra-ui/core';
-
-const { __: __i18n } = wp.i18n;
 
 export default function ErrorLoadSettings() {
 	return (

@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { Flex, Spinner } from '@chakra-ui/core';
 
 export default function Loading() {

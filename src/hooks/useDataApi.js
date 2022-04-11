@@ -1,4 +1,4 @@
-import { useEffect, useState, useReducer } from 'react';
+import { useEffect, useState, useReducer  } from '@wordpress/element';
 
 import api from '../utils/api';
 
