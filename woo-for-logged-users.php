@@ -41,22 +41,42 @@ function redirect_not_logged_users() {
 
 	if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ), true ) ) {
 
-		if ( ! is_user_logged_in() && ( is_woocommerce() || is_cart() || is_checkout() ) ) {
-
-			$options = get_option( $wflu_settings );
-
-			if ( ! empty( $options ) ) {
-				$redirect_page_value = $options[ $wflu_redirect_page_option ];
-
-				if ( $redirect_page_value ) {
-					wp_safe_redirect( get_permalink( $redirect_page_value ) );
-					exit;
-				}
-			}
-
-			wp_safe_redirect( wc_get_page_permalink( 'myaccount' ) );
-			exit;
+		if ( is_user_logged_in() ) {
+			return;
 		}
+
+		/**
+		 * Filter arguments used to retrieve products from database
+		 *
+		 * @since 1.2.4
+		 * @hook wflu_should_redirect_not_logged_in_user
+		 * @param bool $should_redirect Whether the not logged-in user should be redirect. Default: is_woocommerce() || is_cart() || is_checkout().
+		 * @return bool New value
+		 */
+		$should_redirect_not_logged_in_user = apply_filters( 'wflu_should_redirect_not_logged_in_user', is_woocommerce() || is_cart() || is_checkout() );
+
+		if ( ! $should_redirect_not_logged_in_user ) {
+			return;
+		}
+
+		$options = get_option( $wflu_settings );
+
+		$redirect_page = empty( $options[ $wflu_redirect_page_option ] )
+			? wc_get_page_permalink( 'myaccount' )
+			: get_permalink( $options[ $wflu_redirect_page_option ] );
+
+		/**
+		 * Filter the redirect page URL
+		 *
+		 * @since 1.2.4
+		 * @hook wflu_redirect_page_url
+		 * @param string $redirect_page_url The page permalink URL.
+		 * @return string New value.
+		 */
+		$redirect_page = apply_filters( 'wflu_redirect_page_url', $redirect_page );
+
+		wp_safe_redirect( $redirect_page );
+		exit;
 	}
 }
 add_action( 'template_redirect', 'redirect_not_logged_users' );
@@ -71,14 +91,23 @@ function redirect_after_login( $redirect_to ) {
 
 	$options = get_option( $wflu_settings );
 
-	if ( ! empty( $options ) ) {
-		$redirect_after_login = $options[ $wflu_redirect_page_after_login_option ];
+	if ( ! empty( $options[ $wflu_redirect_page_after_login_option ] ) ) {
+		$redirect_to_option = get_permalink( $options[ $wflu_redirect_page_after_login_option ] );
 
-		if ( $redirect_after_login ) {
-			$shop_page   = get_permalink( $redirect_after_login );
-			$redirect_to = $shop_page;
+		if ( $redirect_to_option ) {
+			$redirect_to = $redirect_to_option;
 		}
 	}
+
+	/**
+	 * Filter the redirect after login page URL
+	 *
+	 * @since 1.2.4
+	 * @hook wflu_redirect_after_login_page_url
+	 * @param string $redirect_after_login_page_url The after login page permalink URL.
+	 * @return string New value.
+	 */
+	$redirect_to = apply_filters( 'wflu_redirect_after_login_page_url', $redirect_to );
 
 	return $redirect_to;
 }
