@@ -22,10 +22,12 @@ function wflu_enqueue_admin( $hook ) {
 
 	$wflu_admin = 'wooCommerceForLoggedInUsersAdmin';
 
+	$asset_info = require __DIR__ . '/dist/index.asset.php';
+
 	wp_enqueue_script(
 		$wflu_admin,
 		plugins_url( 'dist/index.js', __FILE__ ),
-		array( 'wp-i18n' ),
+		$asset_info['dependencies'],
 		'1.0.0',
 		true
 	);

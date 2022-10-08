@@ -1,4 +1,3 @@
-import React, { useCallback, useMemo } from 'react';
 import { useFormik } from 'formik';
 import * as yup from 'yup';
 import { Stack, Box, Button } from '@chakra-ui/core';
@@ -17,7 +16,8 @@ import andThen from 'ramda/src/andThen';
 import partial from 'ramda/src/partial';
 import __ from 'ramda/src/__';
 
-const { __: __i18n } = wp.i18n;
+import { __ as __i18n } from '@wordpress/i18n';
+import { useCallback, useMemo } from '@wordpress/element'
 
 import SelectField from '../SelectField';
 import Notice from '../Notice';

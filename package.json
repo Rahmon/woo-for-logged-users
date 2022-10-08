@@ -13,9 +13,9 @@
     }
   },
   "scripts": {
-    "start": "parcel watch src/index.js",
-    "dev": "parcel watch src/index.js",
-    "build": "parcel build src/index.js"
+    "start": "mix watch",
+    "dev": "mix",
+    "build": "mix --production"
   },
   "dependencies": {
     "@chakra-ui/core": "^0.8.0",
@@ -25,22 +25,19 @@
     "axios": "^0.22.0",
     "emotion-theming": "^10.0.27",
     "formik": "^2.1.7",
-    "lodash": "^4.17.21",
     "ramda": "^0.27.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
     "react-select": "^3.2.0",
     "regenerator-runtime": "^0.13.9",
-    "yup": "^0.28.5"
+    "yup": "^0.28.5",
+	"@wordpress/i18n": "^4.6.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.16.7",
-    "@babel/preset-env": "^7.16.8",
     "@babel/preset-react": "^7.16.7",
-    "@parcel/transformer-react-refresh-wrap": "^2.2.0",
+    "@wordpress/babel-plugin-import-jsx-pragma": "^3.1.2",
+    "@wordpress/dependency-extraction-webpack-plugin": "^3.4.1",
     "@wordpress/eslint-plugin": "^9.3.0",
     "@wordpress/prettier-config": "^1.1.1",
     "eslint-plugin-react-hooks": "^4.3.0",
-    "parcel": "^2.2.0"
+    "laravel-mix": "^6.0.43"
   }
 }

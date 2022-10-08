@@ -1,4 +1,3 @@
-import React from 'react';
 import AsyncSelect from 'react-select/async';
 
 const height = 32;

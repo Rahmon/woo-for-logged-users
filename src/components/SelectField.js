@@ -1,4 +1,3 @@
-import React from 'react';
 import { FormControl, FormLabel, FormErrorMessage } from '@chakra-ui/core';
 import partial from 'ramda/src/partial';
 import curry from 'ramda/src/curry';

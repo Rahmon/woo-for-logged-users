@@ -1,5 +1,4 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from '@wordpress/element';
 import { ThemeProvider, CSSReset } from '@chakra-ui/core';
 import or from 'ramda/src/or';
 import and from 'ramda/src/and';
@@ -10,7 +9,7 @@ import ErrorLoadSettings from './components/ErrorLoadSettings';
 import Loading from './components/Loading';
 import FormSettings from './components/form/FormSettings';
 
-const { __: __i18n } = wp.i18n;
+import { __ as __i18n } from '@wordpress/i18n';
 
 function App() {
 	const {
@@ -55,4 +54,4 @@ function App() {
 	);
 }
 
-ReactDOM.render( <App />, document.getElementById( 'wflu-admin' ) );
+render( <App />, document.getElementById( 'wflu-admin' ) );

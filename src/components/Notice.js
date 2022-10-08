@@ -1,6 +1,4 @@
-import React from 'react';
-
-const { __: __i18n } = wp.i18n;
+import { __ as __i18n } from '@wordpress/i18n';
 
 export default function Notice( { status, onDismiss, children } ) {
 	return (
