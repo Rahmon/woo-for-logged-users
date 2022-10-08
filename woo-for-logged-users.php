@@ -3,7 +3,7 @@
  * Plugin Name:       WooCommerce for Logged-in Users
  * Plugin URI:        https://github.com/Rahmon/woo-for-logged-users
  * Description:       Set your WooCommerce Shop only for logged-in users. Just active.
- * Version:           1.2.3
+ * Version:           1.3.0
  * Author:            Rahmon
  * Author URI:        https://github.com/Rahmon/
  * License:           GPL-2.0+
@@ -48,7 +48,7 @@ function redirect_not_logged_users() {
 		/**
 		 * Filter arguments used to retrieve products from database
 		 *
-		 * @since 1.2.4
+		 * @since 1.3.0
 		 * @hook wflu_should_redirect_not_logged_in_user
 		 * @param bool $should_redirect Whether the not logged-in user should be redirect. Default: is_woocommerce() || is_cart() || is_checkout().
 		 * @return bool New value
@@ -68,7 +68,7 @@ function redirect_not_logged_users() {
 		/**
 		 * Filter the redirect page URL
 		 *
-		 * @since 1.2.4
+		 * @since 1.3.0
 		 * @hook wflu_redirect_page_url
 		 * @param string $redirect_page_url The page permalink URL.
 		 * @return string New value.
