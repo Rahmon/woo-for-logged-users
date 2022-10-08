@@ -22,7 +22,7 @@ function wflu_enqueue_admin( $hook ) {
 
 	$wflu_admin = 'wooCommerceForLoggedInUsersAdmin';
 
-	$asset_info = require  __DIR__ . '/dist/index.asset.php';
+	$asset_info = require __DIR__ . '/dist/index.asset.php';
 
 	wp_enqueue_script(
 		$wflu_admin,
