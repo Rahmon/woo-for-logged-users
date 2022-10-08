@@ -31,6 +31,9 @@ Yes, you can. In Dashboard, go to menu WooCommerce -> WooCommerce for logged-in 
 
 == Changelog ==
 
+= 1.3.0 =
+* [new] Filters `wflu_should_redirect_not_logged_in_user`, `wflu_redirect_page_url` and `wflu_redirect_after_login_page_url` 
+
 = 1.2.3 =
 * **Security:** update dependencies.
 
