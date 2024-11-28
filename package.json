@@ -2,42 +2,18 @@
   "name": "woo-for-logged-users",
   "version": "1.1.0",
   "description": "Settings page",
-  "main": "index.js",
+  "main": "build/index.js",
   "repository": "https://github.com/Rahmon/woo-for-logged-users.git",
   "author": "Ramon <Rahmon@users.noreply.github.com>",
   "license": "MIT",
-  "browserslist": "> 0.25%, not dead",
-  "targets": {
-    "default": {
-      "distDir": "./dist"
-    }
-  },
   "scripts": {
-    "start": "mix watch",
-    "dev": "mix",
-    "build": "mix --production"
-  },
-  "dependencies": {
-    "@chakra-ui/core": "^0.8.0",
-    "@emotion/core": "^10.1.1",
-    "@emotion/styled": "^10.0.31",
-    "@swc/helpers": "^0.3.2",
-    "axios": "^0.22.0",
-    "emotion-theming": "^10.0.27",
-    "formik": "^2.1.7",
-    "ramda": "^0.27.0",
-    "react-select": "^3.2.0",
-    "regenerator-runtime": "^0.13.9",
-    "yup": "^0.28.5",
-	"@wordpress/i18n": "^4.6.0"
+	"build": "wp-scripts build",
+	"format": "wp-scripts format",
+	"lint:js": "wp-scripts lint-js",
+	"packages-update": "wp-scripts packages-update",
+	"start": "wp-scripts start"
   },
   "devDependencies": {
-    "@babel/preset-react": "^7.16.7",
-    "@wordpress/babel-plugin-import-jsx-pragma": "^3.1.2",
-    "@wordpress/dependency-extraction-webpack-plugin": "^3.4.1",
-    "@wordpress/eslint-plugin": "^9.3.0",
-    "@wordpress/prettier-config": "^1.1.1",
-    "eslint-plugin-react-hooks": "^4.3.0",
-    "laravel-mix": "^6.0.43"
+    "@wordpress/scripts": "^30.6.0"
   }
 }
