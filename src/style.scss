@@ -1,0 +1,34 @@
+#wflu-admin {
+	.components-base-control__label {
+		text-transform: none;
+		font-size: 1rem; 
+		line-height: 1.5rem;
+	}
+
+	.components-combobox-control__suggestions-container {
+		background-color: #fff;
+		position: relative;
+	}
+
+	.components-form-token-field__suggestions-list {
+		position: absolute;
+		background-color: #fff;
+		border: 1px solid var(--wp-admin-theme-color);
+		box-shadow: 0 0 0 .5px var(--wp-admin-theme-color);
+		outline: 2px solid transparent;
+		top: calc(100% - 1px);
+		border-bottom-left-radius: 2px;
+		border-bottom-right-radius: 2px;
+		z-index: 10;
+	}
+
+	.components-form-token-field__suggestion,
+	.components-combobox-control__input {
+		font-size: 0.875rem;
+		line-height: 1.25rem;
+	}
+
+	.components-base-control__help {
+		color: #525252;
+	}
+}
