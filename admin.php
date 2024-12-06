@@ -22,14 +22,25 @@ function wflu_enqueue_admin( $hook ) {
 
 	$wflu_admin = 'wooCommerceForLoggedInUsersAdmin';
 
-	$asset_info = require __DIR__ . '/dist/index.asset.php';
+	$asset_info = require __DIR__ . '/build/index.asset.php';
+
+	foreach ( $asset_info['dependencies'] as $style ) {
+		wp_enqueue_style( $style );
+	}
 
 	wp_enqueue_script(
 		$wflu_admin,
-		plugins_url( 'dist/index.js', __FILE__ ),
+		plugins_url( 'build/index.js', __FILE__ ),
 		$asset_info['dependencies'],
-		'1.0.0',
+		$asset_info['version'],
 		true
+	);
+
+	wp_enqueue_style(
+		$wflu_admin,
+		plugins_url( 'build/style-index.css', __FILE__ ),
+		array(),
+		$asset_info['version']
 	);
 
 	wp_set_script_translations( $wflu_admin, 'woo-for-logged-in-users' );
@@ -39,15 +50,15 @@ function wflu_enqueue_admin( $hook ) {
 		'wfluSettings',
 		array(
 			'restURL'        => rest_url( '/' ),
+			'settings'       => wflu_get_settings(),
 			'shopPageId'     => wc_get_page_id( 'shop' ),
 			'cartPageId'     => wc_get_page_id( 'cart' ),
 			'checkoutPageId' => wc_get_page_id( 'checkout' ),
 			'nonce'          => wp_create_nonce( 'wp_rest' ),
 		)
 	);
-
 }
-add_action( 'admin_enqueue_scripts', 'wflu_enqueue_admin' );
+add_action( 'admin_enqueue_scripts', 'wflu_enqueue_admin', 100 );
 
 /**
  * Add submenu in WooCommerce -> WooCommerce for logged users
@@ -176,7 +187,7 @@ function wflu_set_settings( $request ) {
 		}
 
 		if ( $response ) {
-			return new WP_REST_Response( true, 200 );
+			return new WP_REST_Response( wflu_get_settings(), 200 );
 		}
 	}
 
