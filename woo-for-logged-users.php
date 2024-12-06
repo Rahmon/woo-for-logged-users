@@ -3,7 +3,7 @@
  * Plugin Name:       WooCommerce for Logged-in Users
  * Plugin URI:        https://github.com/Rahmon/woo-for-logged-users
  * Description:       Set your WooCommerce Shop only for logged-in users. Just active.
- * Version:           1.3.0
+ * Version:           1.4.0
  * Author:            Rahmon
  * Author URI:        https://github.com/Rahmon/
  * License:           GPL-2.0+
@@ -22,7 +22,7 @@ if ( ! defined( 'WPINC' ) ) {
 /**
  * Settings page
  */
-require_once dirname( __FILE__ ) . '/admin.php';
+require_once __DIR__ . '/admin.php';
 
 /**
 * Load the plugin text domain for translation.
